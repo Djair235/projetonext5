@@ -16,12 +16,18 @@ export default async function page() {
   const response = await fetch(API_URL, { cache: "no-store" });
   const data = await response.json();
 
+  interface User {
+    id: string;
+    nome: string;
+    idade: string;
+  }
+
   return (
     <>
       <div className="flex justify-center flex-col items-center">
         <h1 className="flex text-3xl mt-10 mb-5 font-bold">Resposta da Api</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2">
-          {data.map((item: any) => {
+          {data.map((item: User) => {
             return (
               <Card className="w-full max-w-xs mb-5 p-4 sm:mr-6" key={item.id}>
                 <CardHeader>
