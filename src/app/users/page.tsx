@@ -8,8 +8,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { User } from "lucide-react";
+// import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+// import { User } from "lucide-react";
 
 export default async function page() {
   const API_URL = "https://server-less-gules.vercel.app/api/users";
