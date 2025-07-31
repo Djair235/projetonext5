@@ -1,6 +1,12 @@
+// src/app/layout.tsx ou src/app/globals.tsx (onde estiver seu layout raiz)
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
+import { TailwindIndicator } from "@/_components/tailwind-indicator";
+import { Header } from "@/_components/header";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,11 +29,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Header />
         {children}
+        <TailwindIndicator />
       </body>
     </html>
   );
